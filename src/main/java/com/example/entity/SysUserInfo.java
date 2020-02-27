@@ -39,4 +39,5 @@ public class SysUserInfo {
 
     @Column(name = "user_type", nullable = false, columnDefinition = "varchar(100) COMMENT '用户类型'")
     private String userType;
+
 }

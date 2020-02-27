@@ -11,24 +11,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>layout 后台大布局 - Layui</title>
     <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
-    <link th:href="@{/js/layui-v2.5.6/layui/css/layui.css}" rel="stylesheet" />
+    <link th:href="@{js/layui-v2.5.6/layui/css/layui.css}" rel="stylesheet" />
 
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">layui 后台布局</div>
+        <div class="layui-logo" th:text="${name}"></div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="">控制台</a></li>
-            <li class="layui-nav-item"><a href="">商品管理</a></li>
-            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item"><a href="">数据监控</a></li>
             <li class="layui-nav-item">
-                <a href="javascript:;">其它系统</a>
+                <a href="javascript:;">系统管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">邮件管理</a></dd>
-                    <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
+                    <dd><a _href="/systemManagePage/sysUserList" ><cite>系统用户管理</cite></a></dd>
+                    <dd><a _href="/systemManagePage/sysRoleList" ><cite>系统角色管理</cite></a></dd>
+                    <dd><a _href="/systemManagePage/sysAuthList" ><cite>系统权限管理</cite></a></dd>
+                    <dd><a url="/systemManagePage/sysAuthList" ><cite>系统日志管理</cite></a></dd>
                 </dl>
             </li>
         </ul>
@@ -76,7 +76,16 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域</div>
+        <div class="layui-tab" lay-filter="mainTab" lay-allowclose="true">
+            <ul class="layui-tab-title">
+                <li class="home"><i class="layui-icon">&#xe68e;</i></li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show" style="height: 100%;">
+                    <iframe src="" frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="layui-footer">
@@ -89,7 +98,49 @@
     //JavaScript代码区域
     layui.use('element', function(){
         var element = layui.element;
-
+        //为每个菜单选项绑定点击事件
+        $(".layui-nav-child dd").click(function(event){
+            var url = $(this).children('a').attr('_href');
+            var title = $(this).find('cite').html();
+            var index  = $('.layui-nav-child dd').index($(this));
+            //遍历打开的窗口，如果当前点击的选项已经打开，则跳转到对应窗口去，不再执行for外面的两条语句创建新窗口
+            for (var i = 0; i <$('.x-iframe').length; i++) {
+                if($('.x-iframe').eq(i).attr('tab-id')==index+1){
+                    tab.tabChange(index+1);
+                    event.stopPropagation();
+                    return;
+                }
+            }
+            tab.tabAdd(title,url,index+1);
+            tab.tabChange(index+1);
+        });
+        //触发事件
+        var tab = {
+            tabAdd: function(title,url,id){
+                console.log(JSON.stringify(title));
+                console.log(JSON.stringify(url));
+                console.log(JSON.stringify(id));
+                //新增一个Tab项
+                element.tabAdd('mainTab', {
+                    title: title,
+                    content: '<iframe tab-id="'+id+'" frameborder="0" src="'+url+'" scrolling="yes" class="x-iframe"></iframe>',
+                    id: id
+                })
+            }
+            ,tabDelete: function(id){
+                //删除指定Tab项
+                element.tabDelete('mainTab', id);
+                id.addClass('layui-btn-disabled');
+            }
+            ,tabChange: function(id){
+                //切换到指定Tab项
+                element.tabChange('mainTab', id);
+            }
+        };
+        $('.site-demo-active').on('click', function(){
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
     });
 </script>
 </body>

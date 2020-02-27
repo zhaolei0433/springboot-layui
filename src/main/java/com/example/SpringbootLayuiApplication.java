@@ -3,6 +3,7 @@ package com.example;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,7 +18,8 @@ public class SpringbootLayuiApplication {
     }
 
     @RequestMapping("/")
-    public String index() throws Exception {
+    public String index(Model model) throws Exception {
+        model.addAttribute("name","layui后台系统");
         return "index";
     }
 }

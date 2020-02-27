@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Api(tags = SwaggerUIConstants.SYSUSER_PC_API)
 @RestController
-@RequestMapping(value = "sysUser")
+@RequestMapping(value = "systemManage")
 public class SysUserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(SysUserController.class);
 
@@ -40,5 +40,11 @@ public class SysUserController {
     @ResponseBody
     public Result<SysUserInfo> addSysUser(@RequestBody AddSysUserReq req) throws Exception {
         return new Result<>(sysUserService.addSysUser(req));
+    }
+
+    public static void main(String[] args) {
+        String a = "123";
+        int b = 123;
+        System.out.println(a.hashCode());
     }
 }

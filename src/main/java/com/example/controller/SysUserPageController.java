@@ -14,12 +14,24 @@ import java.util.Map;
  * Description:
  */
 @Controller
-@RequestMapping(value = "sysUserPage")
+@RequestMapping(value = "systemManagePage")
 public class SysUserPageController {
 
-    @GetMapping("/")
-    public String test(Map<String,Object> paramMap) throws Exception {
-        paramMap.put("name","zhaolei");
-        return "test";
+    @GetMapping("/sysUserList")
+    public String sysUserList() throws Exception {
+
+        return "systemManage/sysUserList";
+    }
+
+    @GetMapping("/sysRoleList")
+    public String sysRoleList() throws Exception {
+
+        return "systemManage/sysRoleList";
+    }
+
+    @GetMapping("/sysAuthList")
+    public String test() throws Exception {
+
+        return "systemManage/sysAuthList";
     }
 }
