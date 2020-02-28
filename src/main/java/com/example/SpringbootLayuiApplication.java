@@ -22,4 +22,9 @@ public class SpringbootLayuiApplication {
         model.addAttribute("name","layui后台系统");
         return "index";
     }
+
+    @RequestMapping("/test")
+    public String test(Model model) throws Exception {
+        return "test";
+    }
 }
