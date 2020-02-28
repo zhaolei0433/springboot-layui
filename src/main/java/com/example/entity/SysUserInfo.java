@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * @author zhaolei
@@ -39,5 +40,4 @@ public class SysUserInfo {
 
     @Column(name = "user_type", nullable = false, columnDefinition = "varchar(100) COMMENT '用户类型'")
     private String userType;
-
 }

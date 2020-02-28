@@ -3,6 +3,8 @@ package com.example.service;
 import com.example.controller.request.AddSysUserReq;
 import com.example.entity.SysUserInfo;
 
+import java.util.List;
+
 /**
  * @author zhaolei
  * Create: 2020/2/25 13:45
@@ -12,4 +14,6 @@ import com.example.entity.SysUserInfo;
 public interface ISysUserService {
 
     SysUserInfo addSysUser(AddSysUserReq req) throws Exception;
+
+    List<SysUserInfo> findUserList() throws Exception;
 }

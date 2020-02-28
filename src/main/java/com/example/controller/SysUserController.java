@@ -41,10 +41,4 @@ public class SysUserController {
     public Result<SysUserInfo> addSysUser(@RequestBody AddSysUserReq req) throws Exception {
         return new Result<>(sysUserService.addSysUser(req));
     }
-
-    public static void main(String[] args) {
-        String a = "123";
-        int b = 123;
-        System.out.println(a.hashCode());
-    }
 }

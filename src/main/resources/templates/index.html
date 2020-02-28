@@ -5,14 +5,14 @@
   Description:
 -->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>layout 后台大布局 - Layui</title>
     <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
-    <link th:href="@{js/layui-v2.5.6/layui/css/layui.css}" rel="stylesheet" />
-
+    <link rel="stylesheet" th:href="@{js/layui-v2.5.6/layui/css/layui.css}"/>
+    <link th:href="@{css/mystyle.css}" rel="stylesheet" />
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -25,10 +25,10 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">系统管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a _href="/systemManagePage/sysUserList" ><cite>系统用户管理</cite></a></dd>
-                    <dd><a _href="/systemManagePage/sysRoleList" ><cite>系统角色管理</cite></a></dd>
-                    <dd><a _href="/systemManagePage/sysAuthList" ><cite>系统权限管理</cite></a></dd>
-                    <dd><a url="/systemManagePage/sysAuthList" ><cite>系统日志管理</cite></a></dd>
+                    <dd><a class="dianji" _href="/systemManagePage/sysUserList" ><cite>系统用户管理</cite></a></dd>
+                    <dd><a class="dianji" _href="/systemManagePage/sysRoleList" ><cite>系统角色管理</cite></a></dd>
+                    <dd><a class="dianji" _href="/systemManagePage/sysAuthList" ><cite>系统权限管理</cite></a></dd>
+                    <dd><a class="dianji" _href="/systemManagePage/sysLogList"  ><cite>系统日志管理</cite></a></dd>
                 </dl>
             </li>
         </ul>
@@ -76,11 +76,11 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div class="layui-tab" lay-filter="mainTab" lay-allowclose="true">
+        <div class="layui-tab" lay-filter="mainTab" lay-allowclose="true" style="height: 100%">
             <ul class="layui-tab-title">
-                <li class="home"><i class="layui-icon">&#xe68e;</i></li>
+                <li class="home"><i class="layui-icon">&#xe68e;</i>我的桌面</li>
             </ul>
-            <div class="layui-tab-content">
+            <div class="layui-tab-content" style="height: 100%">
                 <div class="layui-tab-item layui-show" style="height: 100%;">
                     <iframe src="" frameborder="0" scrolling="yes" class="x-iframe"></iframe>
                 </div>
@@ -116,14 +116,12 @@
         });
         //触发事件
         var tab = {
+            //添加Tab项
             tabAdd: function(title,url,id){
-                console.log(JSON.stringify(title));
-                console.log(JSON.stringify(url));
-                console.log(JSON.stringify(id));
                 //新增一个Tab项
                 element.tabAdd('mainTab', {
                     title: title,
-                    content: '<iframe tab-id="'+id+'" frameborder="0" src="'+url+'" scrolling="yes" class="x-iframe"></iframe>',
+                    content: '<iframe tab-id="'+id+'" frameborder="0" src="'+url+'" scrolling="yes" class="x-iframe" style="height: 100%; width: 100%"></iframe>',
                     id: id
                 })
             }
@@ -137,10 +135,6 @@
                 element.tabChange('mainTab', id);
             }
         };
-        $('.site-demo-active').on('click', function(){
-            var othis = $(this), type = othis.data('type');
-            active[type] ? active[type].call(this, othis) : '';
-        });
     });
 </script>
 </body>

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author zhaolei
@@ -38,5 +39,10 @@ public class SysUserServiceImpl implements ISysUserService {
         sysUser.setUserType(SystemDefines.USER_TYPE_NORMAL_ADMIN);
         //  sysUser.setPassword(PASSWORD_ENCODER.encode(req.getPassword()));
         return sysUserRepository.save(sysUser);
+    }
+
+    @Override
+    public List<SysUserInfo> findUserList() throws Exception {
+        return (List<SysUserInfo>) sysUserRepository.findAll();
     }
 }
