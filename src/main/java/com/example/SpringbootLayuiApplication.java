@@ -23,6 +23,16 @@ public class SpringbootLayuiApplication {
         return "index";
     }
 
+    @RequestMapping("/login")
+    public String login() throws Exception {
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String register() throws Exception {
+        return "register";
+    }
+
     @RequestMapping("/test")
     public String test(Model model) throws Exception {
         return "test";
