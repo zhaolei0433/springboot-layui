@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
@@ -23,13 +25,20 @@ public class SpringbootLayuiApplication {
         return "index";
     }
 
-    @RequestMapping("/login")
-    public String login() throws Exception {
-        return "login";
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage() throws Exception {
+        return "login1";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@RequestParam("userName") String userName, @RequestParam("password") Integer password) throws Exception {
+        System.out.println(userName);
+        System.out.println(password);
+        return "/index";
     }
 
     @RequestMapping("/register")
-    public String register() throws Exception {
-        return "register";
+    public String registerPage() throws Exception {
+        return "register1";
     }
 }

@@ -30,3 +30,22 @@ spring:
     servlet:
       content-type: text/html
     cache: false
+
+auth:
+  skip:
+    antMatchers:
+      /**/favicon.ico,
+      /**/*.css,
+      /**/*.js,
+      /**/*.png,
+      /**/*.jpg,
+      /**/*.gif,
+      /**/*.map,
+      /**/*.html,
+      /**/*.jsp,
+      /error,
+      /login_failure,
+      /swagger-resources/**,
+      /webjars/**,
+      /v2/**,
+      /swagger-ui.html/**

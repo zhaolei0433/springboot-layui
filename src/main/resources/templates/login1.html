@@ -10,7 +10,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>用户登录</title>
-    <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" th:href="@{js/layui-v2.5.6/layui/css/layui.css}"/>
     <style type="text/css">
         .container{
@@ -19,7 +18,7 @@
             min-height: 320px;
             max-height: 320px;
             position: absolute;
-            top: 0;
+            top: -300px;
             left: 0;
             bottom: 0;
             right: 0;
@@ -50,7 +49,7 @@
         }
         #logoid{
             margin-top: -16px;
-            padding-left:150px;
+            padding-left:100px;
             padding-bottom: 15px;
         }
         .layui-btn{
@@ -71,20 +70,24 @@
         a:hover{
             text-decoration: underline;
         }
+        /*body{
+            background: url("/image/login_background.png");
+            background-size: 100%;
+        }*/
 
     </style>
 </head>
 <body>
-<form class="layui-form" action="" method="post">
+<form class="layui-form" action="/user_login"  method="post">
     <div class="container">
         <button class="close" title="关闭">X</button>
         <div class="layui-form-mid layui-word-aux">
-            <img id="logoid" src="06.png" height="35">
+            <img id="logoid" th:src="@{/image/login.png}" height="40">
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">用户名</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                <input type="userName" name="userName" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -111,13 +114,13 @@
 
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="formDemo">登陆</button>
+                <button class="layui-btn" lay-submit lay-filter="formLogin">登陆</button>
             </div>
         </div>
         <a href="" class="font-set">忘记密码?</a>  <a href="" class="font-set">立即注册</a>
     </div>
 </form>
-<script type="text/javascript" src="layui/layui.js"></script>
+<script th:src="@{/js/layui-v2.5.6/layui/layui.js}"></script>
 <script>
     layui.use(['form', 'layedit', 'laydate'], function(){
         var form = layui.form
@@ -161,12 +164,12 @@
          });*/
 
         //监听提交
-        form.on('submit(demo1)', function(data){
+        /*form.on('submit(formLogin)', function(data){
             layer.alert(JSON.stringify(data.field), {
                 title: '最终的提交信息'
-            })
+            });
             return false;
-        });
+        });*/
 
         //表单初始赋值
         /* form.val('example', {

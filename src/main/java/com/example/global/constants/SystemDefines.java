@@ -22,9 +22,11 @@ public class SystemDefines {
     public static final String SESSION_USER_NAME = "session_user_name";
     public static final String SESSION_USER_TYPE = "session_user_type";
     public static final String SESSION_USER = "session_user";
+
     public static final String USER_TYPE_SUPER_ADMIN = "superAdmin";
     public static final String USER_TYPE_SUPER_ADMIN_TIP = "超级管理员";
     public static final String USER_TYPE_NORMAL_ADMIN = "normal";
+    public static final String USER_TYPE_NORMAL_ADMIN_TIP = "普通管理员";
 
     public static Map<String, String> USER_TYPE_MAP = null;
 
@@ -32,14 +34,14 @@ public class SystemDefines {
 
     //一些异常code定义
     public static final String NO_PERMISSION_CODE  = "no_permission";//无权限
+    public static final String NO_PERMISSION_CODE_TIP  = "无权限";//无权限
 
     static {
         USER_TYPE_MAP = new HashMap<String, String>();
         USER_TYPE_MAP.put(USER_TYPE_SUPER_ADMIN, USER_TYPE_SUPER_ADMIN_TIP);
-        USER_TYPE_MAP.put(USER_TYPE_NORMAL_ADMIN, "普通管理员");
-
+        USER_TYPE_MAP.put(USER_TYPE_NORMAL_ADMIN, USER_TYPE_NORMAL_ADMIN_TIP);
         SYSTEM_MSG_MAP = new HashMap<String,String>();
-        SYSTEM_MSG_MAP.put(NO_PERMISSION_CODE, "无权限");
+        SYSTEM_MSG_MAP.put(NO_PERMISSION_CODE, "NO_PERMISSION_CODE_TIP");
 
     }
 
