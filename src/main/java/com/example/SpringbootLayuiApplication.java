@@ -32,9 +32,4 @@ public class SpringbootLayuiApplication {
     public String register() throws Exception {
         return "register";
     }
-
-    @RequestMapping("/test")
-    public String test(Model model) throws Exception {
-        return "test";
-    }
 }
