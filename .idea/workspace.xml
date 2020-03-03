@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f69775ac-008e-4ce1-bc0d-476ec72afb6f" name="Default Changelist" comment="更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/SpringbootLayuiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/SpringbootLayuiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="bf836435-a047-4805-9b77-e1ebdaaa1660" />
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
       <set>
@@ -64,7 +65,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -199,7 +200,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582700668940</updated>
       <workItem from="1582700681478" duration="3868000" />
-      <workItem from="1582705316929" duration="67838000" />
+      <workItem from="1582705316929" duration="68582000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1582798496750</created>
@@ -236,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583147256644</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="更新">
+      <created>1583205538828</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583205538828</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,10 +294,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583205367391" />
-    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583147289957">
+    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583206261969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583147289957" />
+    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583206261969" />
     <state x="180" y="84" key="DiffContextDialog" timestamp="1582883538943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -338,10 +346,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="359" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583147329612" />
-    <state x="461" y="151" key="SettingsEditor" timestamp="1582876432799">
+    <state x="461" y="151" key="SettingsEditor" timestamp="1583206256861">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582876432799" />
+    <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583206256861" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1583205599902">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583205599902" />
     <state x="628" y="292" key="git4idea.merge.GitPullDialog" timestamp="1583196550643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
