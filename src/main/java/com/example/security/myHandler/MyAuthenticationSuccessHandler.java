@@ -1,4 +1,4 @@
-package com.example.security;
+package com.example.security.myHandler;
 
 import com.example.global.constants.SystemDefines;
 import com.example.security.userDetails.MyUserDetails;
@@ -8,7 +8,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,9 +28,16 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         // 获得授权后可得到用户信息
         MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
-        LOGGER.info("***登陆用户名：{}", userDetails.getUsername());
         httpServletRequest.getSession().setAttribute(SystemDefines.SESSION_USER_NAME, userDetails.getUsername());
-        RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("/index");
-        dispatcher.forward(httpServletRequest, httpServletResponse);
+
+        /*
+         * RequestDispatcher.forward() 方法	        HttpServletResponse.sendRedirect()方法
+         * 运行在服务端	                            运行在客户端
+         * 浏览器url地址不变化                         浏览器url地址变化　
+         */
+        //RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("/index");
+        //dispatcher.forward(httpServletRequest, httpServletResponse);
+        //根据业务需求哪种方法
+        httpServletResponse.sendRedirect("/index");
     }
 }

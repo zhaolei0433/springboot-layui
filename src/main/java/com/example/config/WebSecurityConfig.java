@@ -1,6 +1,7 @@
 package com.example.config;
 
-import com.example.security.MyAuthenticationSuccessHandler;
+import com.example.security.myHandler.MyAuthenticationFailureHandler;
+import com.example.security.myHandler.MyAuthenticationSuccessHandler;
 import com.example.security.MyFilterSecurityInterceptor;
 import com.example.security.MyUsernamePasswordAuthenticationFilter;
 import com.example.security.UnAuthenticationEntryPoint;
@@ -20,10 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.*;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.annotation.Resource;
@@ -114,7 +112,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         usernamePasswordAuthenticationFilter.setPostOnly(true);
         usernamePasswordAuthenticationFilter.setAuthenticationManager(this.authenticationManager());
         usernamePasswordAuthenticationFilter.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/user_login", "POST"));
-        usernamePasswordAuthenticationFilter.setAuthenticationFailureHandler(simpleUrlAuthenticationFailureHandler());
+        usernamePasswordAuthenticationFilter.setAuthenticationFailureHandler(myAuthenticationFailureHandler());
         usernamePasswordAuthenticationFilter.setAuthenticationSuccessHandler(myAuthenticationSuccessHandler());
         return usernamePasswordAuthenticationFilter;
     }
@@ -123,8 +121,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * 登陆失败处理
      * @return
      */
-    private SimpleUrlAuthenticationFailureHandler simpleUrlAuthenticationFailureHandler() {
-        return new SimpleUrlAuthenticationFailureHandler("/login_failure");
+    @Bean
+    public AuthenticationFailureHandler myAuthenticationFailureHandler() {
+        return new MyAuthenticationFailureHandler();
     }
 
     /**
