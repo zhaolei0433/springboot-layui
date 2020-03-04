@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +31,7 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
         MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
         LOGGER.info("***登陆用户名：{}", userDetails.getUsername());
         httpServletRequest.getSession().setAttribute(SystemDefines.SESSION_USER_NAME, userDetails.getUsername());
-
+        RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("/index");
+        dispatcher.forward(httpServletRequest, httpServletResponse);
     }
 }

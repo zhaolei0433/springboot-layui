@@ -1,14 +1,18 @@
 package com.example;
 
+import com.example.global.constants.SystemDefines;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Controller
@@ -19,9 +23,10 @@ public class SpringbootLayuiApplication {
         SpringApplication.run(SpringbootLayuiApplication.class, args);
     }
 
-    @RequestMapping("/")
-    public String index(Model model) throws Exception {
+    @RequestMapping("/index")
+    public String index(Model model, HttpServletRequest httpServletRequest) throws Exception {
         model.addAttribute("name","layui后台系统");
+        model.addAttribute("username",httpServletRequest.getSession().getAttribute(SystemDefines.SESSION_USER_NAME));
         return "index";
     }
 
@@ -30,11 +35,10 @@ public class SpringbootLayuiApplication {
         return "login1";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestParam("userName") String userName, @RequestParam("password") Integer password) throws Exception {
-        System.out.println(userName);
-        System.out.println(password);
-        return "/index";
+    @RequestMapping("/login_failure")
+    public String loginFailure(Model model){
+        model.addAttribute("login_error", "用户名或密码错误");
+        return "login1";
     }
 
     @RequestMapping("/register")

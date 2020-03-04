@@ -25,7 +25,7 @@ public class MyUsernamePasswordAuthenticationFilter extends UsernamePasswordAuth
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         String method = request.getMethod();
         String url = request.getRequestURI();
-        LOGGER.info("********************enter attemptAuthentication,method:{};url:{}", method, url);
+        LOGGER.info("**************enter attemptAuthentication,method:{};url:{}", method, url);
         //return super.attemptAuthentication(request, response);
 
 
@@ -35,11 +35,11 @@ public class MyUsernamePasswordAuthenticationFilter extends UsernamePasswordAuth
 
         String userName = obtainUsername(request);
         String password = obtainPassword(request);
-        LOGGER.info("********userName:{};password:{}", userName , password);
+        LOGGER.info("**************userName:{};password:{}", userName , password);
 
         UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(userName, password);
         setDetails(request, authRequest);
-        LOGGER.info( "*************finished");
+        LOGGER.info( "**************finished");
         return this.getAuthenticationManager().authenticate(authRequest);
     }
 

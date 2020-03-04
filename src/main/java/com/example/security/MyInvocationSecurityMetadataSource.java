@@ -74,8 +74,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
             RequestMatcher requestMatcher = new AntPathRequestMatcher(url);
             if (requestMatcher.matches(filterInvocation.getHttpRequest())) {
                 roleList = resourceMap.get(url);
-                LOGGER.info("*****access url:{} need role,role.size:{},role.name:{}", url,
-                        roleList.size(),roleList.toArray()[0].toString());
+                LOGGER.info("*****access url:{} need role,role.size:{},role.name:{}", url, roleList.size(),roleList.toArray()[0].toString());
                 return roleList;
             }
         }
@@ -95,7 +94,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
     }
 
     /**
-     * 重新加载资讯
+     * 重新加载资讯,一般在role表改变时调用此方法
      */
     public static void reLoadResource() {
         try {
@@ -124,7 +123,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
         for (PermissionInfo data : permissionInfoList) {
             String url = data.getUrl();
             Integer id = data.getId();
-            List<String> roelNames = sysUserService.getRoleNameByPermissionInfoId(id);
+            List<String> roleNames = sysUserService.getRoleNameByPermissionInfoId(id);
             LOGGER.info("****id:{}", id);
             if (url == null || url.equals(""))
                 continue;
@@ -133,7 +132,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
                 Collection<ConfigAttribute> atts = resourceMap.get(item);
                 if (atts == null)
                     atts = new ArrayList<ConfigAttribute>();
-                for (String roleName : roelNames) {
+                for (String roleName : roleNames  ) {
                     ConfigAttribute ca = new SecurityConfig(roleName);
                     atts.add(ca);
                     LOGGER.info("****url:{},roleName:{}", item, roleName);
@@ -143,10 +142,10 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
         }
 
         // //打印查看权限与资源的对应关系
-        LOGGER.info("资源（URL）数量：{}", resourceMap.size());
+        /*LOGGER.info("资源（URL）数量：{}", resourceMap.size());
         Set<String> keys = resourceMap.keySet();
         for (String key : keys) {
             LOGGER.info("**url:{},role:{}", key, resourceMap.get(key));
-        }
+        }*/
     }
 }
