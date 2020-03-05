@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author zhaolei
  * Create: 2020/2/25 13:46
@@ -23,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Api(tags = SwaggerUIConstants.SYSUSER_PC_API)
 @RestController
-@RequestMapping(value = "systemManage")
+@RequestMapping(value = "/systemManage")
 public class SysUserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(SysUserController.class);
 
@@ -36,9 +38,18 @@ public class SysUserController {
 
     @ApiOperation(value = "添加系统用户")
     @ApiImplicitParam(name = "req", value = "系统用户参数", dataType = "AddSysUserReq", required = true, paramType = "body")
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "/sysUser", method = RequestMethod.POST)
     @ResponseBody
     public Result<SysUserInfo> addSysUser(@RequestBody AddSysUserReq req) throws Exception {
         return new Result<>(sysUserService.addSysUser(req));
+    }
+
+    @ApiOperation(value = "获取终端用户")
+    @RequestMapping(value = "/sysUser", method = RequestMethod.GET)
+    @ResponseBody
+    public Result<List<SysUserInfo>> getSysUser() throws Exception {
+        //return new Result<>(sysUserService.getSysUser());
+        sysUserService.getSysUser();
+        return null;
     }
 }

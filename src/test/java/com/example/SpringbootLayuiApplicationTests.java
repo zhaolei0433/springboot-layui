@@ -19,8 +19,7 @@ public class SpringbootLayuiApplicationTests {
 
     @Test
     public void contextLoads() throws Exception {
-        System.out.println(sysUserService.findUserList());
-        System.out.println(sysUserService.findUserList().stream().collect(Collectors.toMap(SysUserInfo::getId, sysUserInfo ->sysUserInfo)));
+        System.out.println(sysUserService.getSysUser());
     }
 
 }

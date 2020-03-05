@@ -16,7 +16,7 @@ public interface ISysUserService {
 
     SysUserInfo addSysUser(AddSysUserReq req) throws Exception;
 
-    List<SysUserInfo> findUserList() throws Exception;
+    List<SysUserInfo> getSysUser() throws Exception;
 
     /**
      * 获取所有的资源数据

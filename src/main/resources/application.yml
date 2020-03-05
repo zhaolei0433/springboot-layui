@@ -48,4 +48,5 @@ auth:
       /swagger-resources/**,
       /webjars/**,
       /v2/**,
-      /swagger-ui.html/**
+      /swagger-ui.html/**,
+      /systemManage/**

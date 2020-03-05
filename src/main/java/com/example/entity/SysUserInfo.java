@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ import java.util.Set;
 @Table(name = "sys_user_info")
 @DynamicUpdate()
 @DynamicInsert()
-public class SysUserInfo {
+public class SysUserInfo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 相当于identity主键生成策略
     private Integer id;
@@ -111,5 +112,18 @@ public class SysUserInfo {
 
     public void setRoleInfos(Set<RoleInfo> roleInfos) {
         this.roleInfos = roleInfos;
+    }
+
+    @Override
+    public String toString() {
+        return "SysUserInfo{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", mailBox='" + mailBox + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", userType='" + userType + '\'' +
+                '}';
     }
 }

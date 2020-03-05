@@ -4,6 +4,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -16,7 +17,7 @@ import java.util.Set;
 @Table(name = "role_info")
 @DynamicUpdate
 @DynamicInsert
-public class RoleInfo {
+public class RoleInfo implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -84,5 +85,14 @@ public class RoleInfo {
 
 	public void setPermissionInfos(Set<PermissionInfo> permissionInfos) {
 		this.permissionInfos = permissionInfos;
+	}
+
+	@Override
+	public String toString() {
+		return "RoleInfo{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", remark='" + remark + '\'' +
+				'}';
 	}
 }

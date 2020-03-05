@@ -1,9 +1,12 @@
 package com.example.security.myHandler;
 
 import com.example.global.constants.SystemDefines;
+import com.example.model.Result;
 import com.example.security.userDetails.MyUserDetails;
+import com.example.utils.GsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -29,6 +32,9 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
         // 获得授权后可得到用户信息
         MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
         httpServletRequest.getSession().setAttribute(SystemDefines.SESSION_USER_NAME, userDetails.getUsername());
+        httpServletResponse.setStatus(HttpStatus.OK.value());
+        /*httpServletResponse.setContentType("application/json;charset=UTF-8");
+        httpServletResponse.getWriter().write(GsonUtil.GsonString(new Result<>("success")));*/
 
         /*
          * RequestDispatcher.forward() 方法	        HttpServletResponse.sendRedirect()方法

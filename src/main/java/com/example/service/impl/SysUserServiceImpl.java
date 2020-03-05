@@ -52,8 +52,10 @@ public class SysUserServiceImpl implements ISysUserService {
     }
 
     @Override
-    public List<SysUserInfo> findUserList() throws Exception {
-        return (List<SysUserInfo>) sysUserRepository.findAll();
+    public List<SysUserInfo> getSysUser() throws Exception {
+        System.out.println((List<SysUserInfo>) sysUserRepository.findAll());
+        //return (List<SysUserInfo>) sysUserRepository.findAll();
+        return null;
     }
 
     @Override

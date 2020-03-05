@@ -2,10 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f69775ac-008e-4ce1-bc0d-476ec72afb6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/GsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login1_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/MyAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-layui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot-layui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/SpringbootLayuiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/SpringbootLayuiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/PermissionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/PermissionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/RoleInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/RoleInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/SysUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/SysUserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationFailureHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/ISysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/ISysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/SpringbootLayuiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/SpringbootLayuiApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/SpringbootLayuiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/SpringbootLayuiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/SysUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/SysUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/SysUserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/ISysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/ISysUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/SysUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/SpringbootLayuiApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/SpringbootLayuiApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +80,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -67,31 +90,46 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/AndroidSDK" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../springboot-jsp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sql-demo/hibernate-demo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\templates" />
-      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.config" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\templates" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\java\com\example\dao" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\java\com\example\entity" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\java\com\example\security" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\static\image" />
-      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\static\img" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.utils" />
+      <recent name="com.example.config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\templates" />
+      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SpringbootLayuiApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyAuthenticationFailureHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.security.myHandler.MyAuthenticationFailureHandler" />
+      <module name="springboot-layui" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.security.myHandler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,8 +219,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SysUserServiceImpl" />
         <item itemvalue="JUnit.SpringbootLayuiApplicationTests.contextLoads" />
+        <item itemvalue="Application.MyAuthenticationFailureHandler" />
+        <item itemvalue="Application.SysUserServiceImpl" />
         <item itemvalue="Application.SysUserController" />
       </list>
     </recent_temporary>
@@ -211,7 +250,7 @@
       <updated>1582700668940</updated>
       <workItem from="1582700681478" duration="3868000" />
       <workItem from="1582705316929" duration="94662000" />
-      <workItem from="1583310528821" duration="6824000" />
+      <workItem from="1583310528821" duration="25575000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1582798496750</created>
@@ -290,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583313408714</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="更新">
+      <created>1583317402819</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583317402819</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,32 +372,41 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更新" />
     <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1583315731744">
+    <state x="552" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583403507760">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583315731744" />
+    <state x="552" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583403507760" />
+    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1583402039336">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583402039336" />
     <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583216962485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583216962485" />
-    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583313406313">
+    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583317401200">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583313406313" />
-    <state x="180" y="84" key="DiffContextDialog" timestamp="1582883538943">
+    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583317401200" />
+    <state x="180" y="84" width="1536" height="832" key="DiffContextDialog" timestamp="1583400257947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="180" y="84" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582883538943" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1583311183656">
+    <state x="180" y="84" width="1536" height="832" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583400257947" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1583401408109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583311183656" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583401408109" />
     <state x="811" y="409" width="297" height="271" key="Github.ShareDialog" timestamp="1583147310503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -360,46 +415,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="138" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582711576198" />
-    <state width="1876" height="313" key="GridCell.Tab.0.bottom" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.0.bottom" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
-    <state width="1876" height="313" key="GridCell.Tab.0.center" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state width="1876" height="205" key="GridCell.Tab.0.center" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
-    <state width="1876" height="313" key="GridCell.Tab.0.left" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state width="1876" height="205" key="GridCell.Tab.0.left" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
-    <state width="1876" height="313" key="GridCell.Tab.0.right" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state width="1876" height="205" key="GridCell.Tab.0.right" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
-    <state width="1876" height="313" key="GridCell.Tab.1.bottom" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state width="1876" height="205" key="GridCell.Tab.1.bottom" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
-    <state width="1876" height="313" key="GridCell.Tab.1.center" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state width="1876" height="205" key="GridCell.Tab.1.center" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
-    <state width="1876" height="313" key="GridCell.Tab.1.left" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state width="1876" height="205" key="GridCell.Tab.1.left" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
-    <state width="1876" height="313" key="GridCell.Tab.1.right" timestamp="1583317104268">
+    <state width="1876" height="205" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state width="1876" height="205" key="GridCell.Tab.1.right" timestamp="1583403219746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="313" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583317104268" />
+    <state width="1876" height="205" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583403219746" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1583389382119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583389382119" />
     <state x="461" y="151" key="SettingsEditor" timestamp="1583206256861">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583206256861" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1583313473303">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1583317407096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583313473303" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583317407096" />
     <state x="751" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583313390299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

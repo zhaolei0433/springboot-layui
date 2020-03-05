@@ -32,13 +32,13 @@ public class SpringbootLayuiApplication {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() throws Exception {
-        return "login1";
+        return "login1_1";
     }
 
     @RequestMapping("/login_failure")
     public String loginFailure(Model model){
         model.addAttribute("login_error", "用户名或密码错误");
-        return "login1";
+        return "login1_1";
     }
 
     @RequestMapping("/register")
