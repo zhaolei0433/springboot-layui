@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -28,6 +29,7 @@ public class RoleInfo implements Serializable {
 	@Column(name = "remark")
 	private String remark;
 
+	@JsonBackReference
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "sys_user_role_rel",
@@ -36,6 +38,7 @@ public class RoleInfo implements Serializable {
 	)
 	private Set<SysUserInfo> sysUserInfos;
 
+	@JsonBackReference
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "role_permission_rel",

@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import java.io.IOException;
  * Modified By:
  * Description:
  */
+@Component
 public class MyAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MyAuthenticationSuccessHandler.class);

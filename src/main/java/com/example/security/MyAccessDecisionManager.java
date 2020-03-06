@@ -38,8 +38,9 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
             }
         }
         // 该资源没有配置访问的角色权限，暂定不可访问
-        if (configAttributes == null)
+        if (configAttributes == null || configAttributes.size() == 0)
             throw new AccessDeniedException("no right!");
+
         Iterator<ConfigAttribute> ite = configAttributes.iterator();
         while (ite.hasNext()) {
             ConfigAttribute ca = ite.next();

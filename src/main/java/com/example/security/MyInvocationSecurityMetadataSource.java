@@ -5,6 +5,7 @@ import com.example.service.ISysUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.web.FilterInvocation;
@@ -32,6 +33,9 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
 
     @Autowired
     private ISysUserService sysUserService;
+
+    @Value("${auth.skip.antMatchers}")
+    private String[] auth_skip_antMatchers;
 
     private static Map<String, Collection<ConfigAttribute>> resourceMap = null;
 
@@ -74,14 +78,17 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
             RequestMatcher requestMatcher = new AntPathRequestMatcher(url);
             if (requestMatcher.matches(filterInvocation.getHttpRequest())) {
                 roleList = resourceMap.get(url);
-                LOGGER.info("*****access url:{} need role,role.size:{},role.name:{}", url, roleList.size(),roleList.toArray()[0].toString());
-                return roleList;
+                LOGGER.info("*****access url:{} need role,role.size:{},role.name:{}", url, roleList.size(),roleList.toString());
             }
         }
-        //避免返回null，否则将不进入AccessDecisionManager中进行权限判断
-        //ConfigAttribute configAttribute = new SecurityConfig("超级管理员");
-        //roleList.add(configAttribute);
-        //return roleList;
+        //避免返回null或者当roleList.size() == 0的情况，否则将不进入AccessDecisionManager中进行权限判断
+        //如果没有给此url设置功能列表，则默认为超级管理员。
+       /* if (roleList.size() == 0) {
+            ConfigAttribute configAttribute = new SecurityConfig("超级管理员");
+            roleList.add(configAttribute);
+        }
+        return roleList;*/
+
         //返回为null表示这个url不需要任何角色就能访问
         return null;
     }
@@ -135,17 +142,17 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
                 for (String roleName : roleNames  ) {
                     ConfigAttribute ca = new SecurityConfig(roleName);
                     atts.add(ca);
-                    LOGGER.info("****url:{},roleName:{}", item, roleName);
+                    //LOGGER.info("****url:{},roleName:{}", item, roleName);
                 }
                 resourceMap.put(item, atts);
             }
         }
 
         // //打印查看权限与资源的对应关系
-        /*LOGGER.info("资源（URL）数量：{}", resourceMap.size());
+        LOGGER.info("资源（URL）数量：{}", resourceMap.size());
         Set<String> keys = resourceMap.keySet();
         for (String key : keys) {
             LOGGER.info("**url:{},role:{}", key, resourceMap.get(key));
-        }*/
+        }
     }
 }

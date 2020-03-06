@@ -17,6 +17,7 @@ public class Result<T> implements Serializable {
     private String msg = ResponseConstants.SUCCESS_CODE_00000_MSG;
     private int code = ResponseConstants.SUCCESS_CODE_00000;
     private T data;
+    private  Integer count;
 
     public Result() {
         super();
@@ -26,6 +27,18 @@ public class Result<T> implements Serializable {
         super();
         this.code = code;
         this.msg = msg;
+    }
+
+    public Result(T data, Integer count) {
+        super();
+        this.data = data;
+        this.count = count;
+        if (data instanceof Boolean) {
+            if (!(Boolean) data) {
+                this.code = ResponseConstants.ERROR_CODE_00001;
+                this.msg = ResponseConstants.ERROR_CODE_00001_MSG;
+            }
+        }
     }
 
     public Result(T data) {

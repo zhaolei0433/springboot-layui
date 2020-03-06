@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -42,6 +43,7 @@ public class SysUserInfo implements Serializable {
     @Column(name = "user_type", nullable = false, columnDefinition = "varchar(100) COMMENT '用户类型'")
     private String userType;
 
+    @JsonBackReference
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "sys_user_role_rel",

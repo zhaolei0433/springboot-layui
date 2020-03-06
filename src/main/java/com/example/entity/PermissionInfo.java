@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.NotFound;
@@ -38,6 +39,7 @@ public class PermissionInfo implements Serializable {
 	@NotFound(action = NotFoundAction.IGNORE)
 	private PermissionInfo parentModel;
 
+	@JsonBackReference
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "role_permission_rel",

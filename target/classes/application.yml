@@ -44,9 +44,7 @@ auth:
       /**/*.html,
       /**/*.jsp,
       /error,
-      /login_failure,
       /swagger-resources/**,
       /webjars/**,
       /v2/**,
-      /swagger-ui.html/**,
-      /systemManage/**
+      /swagger-ui.html/**

@@ -25,7 +25,7 @@ import java.util.List;
  */
 @Api(tags = SwaggerUIConstants.SYSUSER_PC_API)
 @RestController
-@RequestMapping(value = "/systemManage")
+@RequestMapping(value = "/sysUser")
 public class SysUserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(SysUserController.class);
 
@@ -38,18 +38,18 @@ public class SysUserController {
 
     @ApiOperation(value = "添加系统用户")
     @ApiImplicitParam(name = "req", value = "系统用户参数", dataType = "AddSysUserReq", required = true, paramType = "body")
-    @RequestMapping(value = "/sysUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/addSysUser", method = RequestMethod.POST)
     @ResponseBody
     public Result<SysUserInfo> addSysUser(@RequestBody AddSysUserReq req) throws Exception {
         return new Result<>(sysUserService.addSysUser(req));
     }
 
-    @ApiOperation(value = "获取终端用户")
-    @RequestMapping(value = "/sysUser", method = RequestMethod.GET)
+    @ApiOperation(value = "获取系统用户")
+    @RequestMapping(value = "/querySysUser", method = RequestMethod.GET)
     @ResponseBody
     public Result<List<SysUserInfo>> getSysUser() throws Exception {
-        //return new Result<>(sysUserService.getSysUser());
-        sysUserService.getSysUser();
-        return null;
+        List<SysUserInfo> sysUserInfos = sysUserService.getSysUser();
+        sysUserInfos.forEach(sysUserInfo -> sysUserInfo.setUserType(SystemDefines.USER_TYPE_MAP.get(sysUserInfo.getUserType())));
+        return new Result<>(sysUserInfos,sysUserInfos.size());
     }
 }
