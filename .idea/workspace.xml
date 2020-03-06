@@ -3,25 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f69775ac-008e-4ce1-bc0d-476ec72afb6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/PermissionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/PermissionInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/RoleInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/RoleInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/SysUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/SysUserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/MyAccessDecisionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/MyAccessDecisionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/MyFilterSecurityInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/MyFilterSecurityInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/MyInvocationSecurityMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/MyInvocationSecurityMetadataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationFailureHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/systemManage/sysUserList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/systemManage/sysUserList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/SysUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/SysUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/SysUserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/model/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/model/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/impl/SysUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/systemManage/sysUserList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/systemManage/sysUserList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +228,7 @@
       <updated>1582700668940</updated>
       <workItem from="1582700681478" duration="3868000" />
       <workItem from="1582705316929" duration="94662000" />
-      <workItem from="1583310528821" duration="43912000" />
+      <workItem from="1583310528821" duration="45007000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1582798496750</created>
@@ -338,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583403532304</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="更新">
+      <created>1583483452702</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583483452702</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,10 +387,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583216962485" />
-    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583403528582">
+    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583483449036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583403528582" />
+    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583483449036" />
     <state x="180" y="84" width="1536" height="832" key="DiffContextDialog" timestamp="1583400257947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -417,38 +407,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="138" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582711576198" />
-    <state width="1860" height="177" key="GridCell.Tab.0.bottom" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.0.bottom" timestamp="1583489895918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
-    <state width="1860" height="177" key="GridCell.Tab.0.center" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
+    <state width="1860" height="321" key="GridCell.Tab.0.center" timestamp="1583489895918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
-    <state width="1860" height="177" key="GridCell.Tab.0.left" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
+    <state width="1860" height="321" key="GridCell.Tab.0.left" timestamp="1583489895918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
-    <state width="1860" height="177" key="GridCell.Tab.0.right" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
+    <state width="1860" height="321" key="GridCell.Tab.0.right" timestamp="1583489895918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
-    <state width="1860" height="177" key="GridCell.Tab.1.bottom" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
+    <state width="1860" height="321" key="GridCell.Tab.1.bottom" timestamp="1583489895919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
-    <state width="1860" height="177" key="GridCell.Tab.1.center" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895919" />
+    <state width="1860" height="321" key="GridCell.Tab.1.center" timestamp="1583489895919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
-    <state width="1860" height="177" key="GridCell.Tab.1.left" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895919" />
+    <state width="1860" height="321" key="GridCell.Tab.1.left" timestamp="1583489895918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
-    <state width="1860" height="177" key="GridCell.Tab.1.right" timestamp="1583482304346">
+    <state width="1860" height="321" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
+    <state width="1860" height="321" key="GridCell.Tab.1.right" timestamp="1583489895919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="177" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583482304346" />
+    <state width="1860" height="321" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895919" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1583389382119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -457,10 +447,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583206256861" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1583403534908">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1583483455213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583403534908" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583483455213" />
     <state x="751" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583313390299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

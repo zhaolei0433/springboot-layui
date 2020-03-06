@@ -34,9 +34,6 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
     @Autowired
     private ISysUserService sysUserService;
 
-    @Value("${auth.skip.antMatchers}")
-    private String[] auth_skip_antMatchers;
-
     private static Map<String, Collection<ConfigAttribute>> resourceMap = null;
 
 
@@ -79,6 +76,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
             if (requestMatcher.matches(filterInvocation.getHttpRequest())) {
                 roleList = resourceMap.get(url);
                 LOGGER.info("*****access url:{} need role,role.size:{},role.name:{}", url, roleList.size(),roleList.toString());
+                return roleList;
             }
         }
         //避免返回null或者当roleList.size() == 0的情况，否则将不进入AccessDecisionManager中进行权限判断
