@@ -15,6 +15,7 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.*;
 
 /**
@@ -31,15 +32,10 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
     private static final Logger LOGGER = LoggerFactory.getLogger(MyInvocationSecurityMetadataSource.class);
 
 
-    @Autowired
+    @Resource
     private ISysUserService sysUserService;
 
     private static Map<String, Collection<ConfigAttribute>> resourceMap = null;
-
-
-    public MyInvocationSecurityMetadataSource() {
-
-    }
 
     /**
      * 获取所有的权限

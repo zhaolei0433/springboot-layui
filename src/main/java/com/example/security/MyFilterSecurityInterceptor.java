@@ -11,6 +11,7 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -30,13 +31,13 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
     private static final Logger LOGGER = LoggerFactory.getLogger(MyFilterSecurityInterceptor.class);
 
 
-    @Autowired
+    @Resource
     private MyInvocationSecurityMetadataSource myInvocationSecurityMetadataSource;
 
-    @Autowired
+    @Resource
     private MyAccessDecisionManager myAccessDecisionManager;
 
-    @Autowired
+    @Resource
     private AuthenticationManager authenticationManager;
 
     @PostConstruct

@@ -184,7 +184,7 @@
                 },
                 error:function (data) {
                     $(".warning").css("color", "#f00");
-                    document.getElementById("warning").textContent = "用户名或密码错误";
+                    document.getElementById("warning").textContent = data.responseJSON.msg;
                 }
             });
             return false;

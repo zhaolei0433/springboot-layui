@@ -79,13 +79,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
         http.addFilterAt(myFilterSecurityInterceptor, FilterSecurityInterceptor.class);
         http.authorizeRequests()
-                // 设置不需要授权的请求
+                // 设置允许匿名的url请求
                 .antMatchers(auth_skip_antMatchers).permitAll()
                 // 其他地址的访问均需验证权限（需要登录）
                 .anyRequest().authenticated()
                 // 登陆配置
                 .and().formLogin()
-                    .loginPage("/login").defaultSuccessUrl("/index") //设置登陆页面，并设置成功响应
+                    .loginPage("/login") //设置登陆页面
                     .failureHandler(myAuthenticationFailureHandler).permitAll() //并设置失败响应为json格式
                 // 登出配置
                 .and().logout()
@@ -95,7 +95,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .invalidSessionUrl("/login") // 设置Session失效跳转页
                     .maximumSessions(1); // 设置最大Session数为1
 
+        //无权限处理
         http.exceptionHandling().accessDeniedHandler(myAccessDeniedHandler);
+        //未登陆处理
         http.httpBasic().authenticationEntryPoint(myAuthenticationEntryPoint);
         // 关闭csrf
         http.csrf().disable();
@@ -107,7 +109,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 必须要配置一个 WebInvocationPrivilegeEvaluator
         // 的实例，使用自定义的权限拦截器，否则sec:authorize不起作用
         web.privilegeEvaluator(customWebInvocationPrivilegeEvaluator());
-        web.ignoring().and().ignoring().antMatchers(auth_skip_antMatchers);
+        // 设置拦截忽略文件夹，可以对静态资源放行
+        web.ignoring().and().ignoring().antMatchers("/css/**", "/js/**","/image/**");
     }
 
     private DefaultWebInvocationPrivilegeEvaluator customWebInvocationPrivilegeEvaluator() {

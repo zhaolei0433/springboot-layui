@@ -1,12 +1,18 @@
 package com.example.security.myHandler;
 
+import com.example.global.constants.ResponseConstants;
 import com.example.model.Result;
 import com.example.utils.GsonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AccountExpiredException;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 
@@ -25,13 +31,25 @@ import java.io.IOException;
 public class MyAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MyAuthenticationFailureHandler.class);
-    private static ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
-    public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
+    public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException exception) throws IOException, ServletException {
         httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
         httpServletResponse.setContentType("application/json;charset=UTF-8");
-        httpServletResponse.getWriter().write(GsonUtil.GsonString(new Result<>("fail")));
-        /*httpServletResponse.sendRedirect("/login_failure");*/
+        Result<String> result = new Result<>();
+
+        if (exception instanceof UsernameNotFoundException || exception instanceof BadCredentialsException) {
+            result.setCode(ResponseConstants.ERROR_CODE_0000401);
+            result.setMsg(ResponseConstants.ERROR_CODE_0000401_MSG);
+        }if (exception instanceof AccountExpiredException ||exception instanceof LockedException) {
+            result.setCode(ResponseConstants.ERROR_CODE_00004011);
+            result.setMsg(ResponseConstants.ERROR_CODE_00004011_MSG);
+        }if (exception instanceof DisabledException) {
+            result.setCode(ResponseConstants.ERROR_CODE_00004012);
+            result.setMsg(ResponseConstants.ERROR_CODE_00004012_MSG);
+        }
+
+        httpServletResponse.getWriter().write(GsonUtil.GsonString(result));
+        LOGGER.error("登陆失败："+exception.getMessage());
     }
 }

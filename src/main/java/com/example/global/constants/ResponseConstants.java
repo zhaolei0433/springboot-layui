@@ -15,8 +15,6 @@ public class ResponseConstants {
 	public static final String ERROR_CODE_00005_MSG = "无效token！";
 	public static final Integer ERROR_CODE_00006 = 6;
 	public static final String ERROR_CODE_00006_MSG = "系统中不存在此名字的区域！";
-	public static final Integer ERROR_CODE_00007 = 7;
-	public static final String ERROR_CODE_00007_MSG = "用户名不存在！";
 	public static final Integer ERROR_CODE_00008 = 8;
 	public static final String ERROR_CODE_00008_MSG = "用户名密码不匹配！";
 	public static final Integer ERROR_CODE_00009 = 9;
@@ -27,6 +25,12 @@ public class ResponseConstants {
 	public static final String ERROR_CODE_00011_MSG = "参数不能为空！";
 	public static final Integer ERROR_CODE_00012 = 12;
 	public static final String ERROR_CODE_00012_MSG = "参数解析失败！";
+	public static final Integer ERROR_CODE_0000401 = 401;
+	public static final String ERROR_CODE_0000401_MSG = "用户名或密码错误！";
+	public static final Integer ERROR_CODE_00004011 = 4011;
+	public static final String ERROR_CODE_00004011_MSG = "账号过期或被锁定！";
+	public static final Integer ERROR_CODE_00004012 = 4012;
+	public static final String ERROR_CODE_00004012_MSG = "账号不可用！";
 	public static final Integer ERROR_CODE_00403 = 403;
 	public static final String ERROR_CODE_00403_MSG = "用户无权访问";
 	public static final Integer ERROR_CODE_00404 = 404;
