@@ -83,6 +83,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(auth_skip_antMatchers).permitAll()
                 // 其他地址的访问均需验证权限（需要登录）
                 .anyRequest().authenticated()
+                //异常配置
+                .and().exceptionHandling()
+                    .authenticationEntryPoint(myAuthenticationEntryPoint) //未登录处理
+                    .accessDeniedHandler(myAccessDeniedHandler) //无权限处理
                 // 登陆配置
                 .and().formLogin()
                     .loginPage("/login") //设置登陆页面
@@ -94,11 +98,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().sessionManagement()
                     .invalidSessionUrl("/login") // 设置Session失效跳转页
                     .maximumSessions(1); // 设置最大Session数为1
-
-        //无权限处理
-        http.exceptionHandling().accessDeniedHandler(myAccessDeniedHandler);
-        //未登陆处理
-        http.httpBasic().authenticationEntryPoint(myAuthenticationEntryPoint);
         // 关闭csrf
         http.csrf().disable();
     }

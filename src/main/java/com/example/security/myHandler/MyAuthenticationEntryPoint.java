@@ -26,7 +26,7 @@ public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
         try {
             LOGGER.warn("***not login,url:{}",httpServletRequest.getRequestURI());
-            //ResultUtil.writeJavaScript(httpServletResponse,ErrorCodeEnum.LOGIN_WITHOUT);
+            httpServletResponse.sendRedirect("/login");
         } catch (Exception ee) {
             LOGGER.error("***commence throw e:{}", e.getMessage());
         }

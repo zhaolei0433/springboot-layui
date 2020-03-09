@@ -35,15 +35,6 @@ auth:
   skip:
     antMatchers:
       /**/favicon.ico,
-      /**/*.css,
-      /**/*.js,
-      /**/*.png,
-      /**/*.jpg,
-      /**/*.gif,
-      /**/*.map,
-      /**/*.html,
-      /**/*.jsp,
-      /error,
       /swagger-resources/**,
       /webjars/**,
       /v2/**,
