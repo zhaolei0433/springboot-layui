@@ -9,6 +9,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.Collection;
+import java.util.Objects;
 
 /**
  * @author zhaolei
@@ -91,5 +92,23 @@ public class MyUserDetails implements UserDetails {
                 ", enabled=" + enabled +
                 ", lastPasswordResetDate=" + lastPasswordResetDate +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyUserDetails that = (MyUserDetails) o;
+        return enabled == that.enabled &&
+                Objects.equals(userId, that.userId) &&
+                Objects.equals(username, that.username) &&
+                Objects.equals(password, that.password) &&
+                Objects.equals(authorities, that.authorities) &&
+                Objects.equals(lastPasswordResetDate, that.lastPasswordResetDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, username, password, authorities, enabled, lastPasswordResetDate);
     }
 }
