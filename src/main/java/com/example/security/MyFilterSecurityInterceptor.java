@@ -75,7 +75,7 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
     public void invoke(FilterInvocation fi) throws IOException,
             ServletException {
-        LOGGER.info("**************开始权限检测,url:" + fi.getRequestUrl());
+        //LOGGER.info("**************开始权限检测,url:" + fi.getRequestUrl());
         // 在这儿调用了父类beforeInvocation（）的方法， 也就调用了accessDecisionManager
         InterceptorStatusToken token = super.beforeInvocation(fi);
         try {

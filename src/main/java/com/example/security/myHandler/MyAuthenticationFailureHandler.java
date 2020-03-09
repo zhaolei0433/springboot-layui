@@ -50,6 +50,6 @@ public class MyAuthenticationFailureHandler implements AuthenticationFailureHand
         }
 
         httpServletResponse.getWriter().write(GsonUtil.GsonString(result));
-        LOGGER.error("登陆失败："+exception.getMessage());
+        LOGGER.error("登陆失败，"+exception.getMessage());
     }
 }

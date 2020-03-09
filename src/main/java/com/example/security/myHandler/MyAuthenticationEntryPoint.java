@@ -23,12 +23,8 @@ public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
     private static final Logger LOGGER = LoggerFactory.getLogger(MyAuthenticationEntryPoint.class);
 
     @Override
-    public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
-        try {
-            LOGGER.warn("***not login,url:{}",httpServletRequest.getRequestURI());
-            httpServletResponse.sendRedirect("/login");
-        } catch (Exception ee) {
-            LOGGER.error("***commence throw e:{}", e.getMessage());
-        }
+    public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException exception) throws IOException, ServletException {
+        httpServletResponse.sendRedirect("/login");
+        LOGGER.error("未登陆，"+exception.getMessage());
     }
 }

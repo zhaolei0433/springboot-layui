@@ -4,6 +4,7 @@ import com.example.security.MyFilterSecurityInterceptor;
 import com.example.security.myHandler.MyAccessDeniedHandler;
 import com.example.security.myHandler.MyAuthenticationEntryPoint;
 import com.example.security.myHandler.MyAuthenticationFailureHandler;
+import com.example.security.myHandler.MyAuthenticationSuccessHandler;
 import com.example.security.userDetails.MyUserDetailService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -47,6 +48,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private MyAuthenticationFailureHandler myAuthenticationFailureHandler;
 
+    @Resource
+    private MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
+
     @Value("${auth.skip.antMatchers}")
     private String[] auth_skip_antMatchers;
 
@@ -85,12 +89,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 //异常配置
                 .and().exceptionHandling()
-                    .authenticationEntryPoint(myAuthenticationEntryPoint) //未登录处理
-                    .accessDeniedHandler(myAccessDeniedHandler) //无权限处理
+                    .authenticationEntryPoint(myAuthenticationEntryPoint) // 未登录处理
+                    .accessDeniedHandler(myAccessDeniedHandler) // 无权限处理
                 // 登陆配置
                 .and().formLogin()
-                    .loginPage("/login") //设置登陆页面
-                    .failureHandler(myAuthenticationFailureHandler).permitAll() //并设置失败响应为json格式
+                    .loginPage("/login") // 设置登陆页面
+                    .successHandler(myAuthenticationSuccessHandler) // 登陆成功处理
+                    .failureHandler(myAuthenticationFailureHandler).permitAll() // 登录失败处理
                 // 登出配置
                 .and().logout()
                     .logoutSuccessUrl("/login").permitAll()

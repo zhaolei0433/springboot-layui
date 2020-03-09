@@ -7,9 +7,9 @@ spring:
   application:
     name: boot-layui-demo
   datasource:
-    url: jdbc:mysql://localhost:3306/my_default_system?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://139.159.177.48:3306/my_default_system?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password: root
+    password: zhaolei
     hikari:
       max-lifetime: 1800000
       connection-timeout: 30000
