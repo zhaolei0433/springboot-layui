@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f69775ac-008e-4ce1-bc0d-476ec72afb6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAccessDeniedHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/SpringbootLayuiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/SpringbootLayuiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/global/constants/ResponseConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/global/constants/ResponseConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/MyFilterSecurityInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/MyFilterSecurityInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/MyInvocationSecurityMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/MyInvocationSecurityMetadataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/SysUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/systemManage/sysUserList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/systemManage/sysUserList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/MyUsernamePasswordAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/UnAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationFailureHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/myHandler/MyAuthenticationSuccessHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login1_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/SpringbootLayuiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/SpringbootLayuiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/global/constants/ResponseConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/global/constants/ResponseConstants.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,27 +79,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/AndroidSDK" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sql-demo/hibernate-demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../utils-demo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\templates" />
+      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.global" />
+      <recent name="com.example.utils" />
+      <recent name="com.example.config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\templates" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\java\com\example\dao" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\java\com\example\entity" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\java\com\example\security" />
       <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\static\image" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.utils" />
-      <recent name="com.example.config" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources\templates" />
-      <recent name="E:\IDEAWorkSpace\springboot-demo\springboot-layui\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SpringbootLayuiApplication">
@@ -229,6 +241,7 @@
       <workItem from="1582700681478" duration="3868000" />
       <workItem from="1582705316929" duration="94662000" />
       <workItem from="1583310528821" duration="45007000" />
+      <workItem from="1583717742843" duration="16834000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1582798496750</created>
@@ -379,26 +392,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583403507760" />
-    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1583402039336">
+    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1583737600324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583402039336" />
-    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583216962485">
+    <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583737600324" />
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583743140281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583216962485" />
-    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583483449036">
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583743140281" />
+    <state x="505" y="22" key="CommitChangelistDialog2" timestamp="1583490115102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583483449036" />
+    <state x="505" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583490115102" />
     <state x="180" y="84" width="1536" height="832" key="DiffContextDialog" timestamp="1583400257947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="180" y="84" width="1536" height="832" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583400257947" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1583401408109">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1583725342663">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583401408109" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583725342663" />
     <state x="811" y="409" width="297" height="271" key="Github.ShareDialog" timestamp="1583147310503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -407,38 +420,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="138" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582711576198" />
-    <state width="1860" height="321" key="GridCell.Tab.0.bottom" timestamp="1583489895918">
+    <state width="1876" height="350" key="GridCell.Tab.0.bottom" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
-    <state width="1860" height="321" key="GridCell.Tab.0.center" timestamp="1583489895918">
+    <state width="1876" height="350" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
+    <state width="1876" height="350" key="GridCell.Tab.0.center" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
-    <state width="1860" height="321" key="GridCell.Tab.0.left" timestamp="1583489895918">
+    <state width="1876" height="350" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
+    <state width="1876" height="350" key="GridCell.Tab.0.left" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
-    <state width="1860" height="321" key="GridCell.Tab.0.right" timestamp="1583489895918">
+    <state width="1876" height="350" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
+    <state width="1876" height="350" key="GridCell.Tab.0.right" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
-    <state width="1860" height="321" key="GridCell.Tab.1.bottom" timestamp="1583489895919">
+    <state width="1876" height="350" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
+    <state width="1876" height="350" key="GridCell.Tab.1.bottom" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895919" />
-    <state width="1860" height="321" key="GridCell.Tab.1.center" timestamp="1583489895919">
+    <state width="1876" height="350" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
+    <state width="1876" height="350" key="GridCell.Tab.1.center" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895919" />
-    <state width="1860" height="321" key="GridCell.Tab.1.left" timestamp="1583489895918">
+    <state width="1876" height="350" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
+    <state width="1876" height="350" key="GridCell.Tab.1.left" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895918" />
-    <state width="1860" height="321" key="GridCell.Tab.1.right" timestamp="1583489895919">
+    <state width="1876" height="350" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
+    <state width="1876" height="350" key="GridCell.Tab.1.right" timestamp="1583743380502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="321" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583489895919" />
+    <state width="1876" height="350" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583743380502" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1583389382119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -447,10 +460,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583206256861" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1583483455213">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1583490118497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583483455213" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583490118497" />
     <state x="751" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583313390299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -459,13 +472,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="628" y="292" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583313460392" />
+    <state x="373" y="266" key="new project wizard" timestamp="1583741784469">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="373" y="266" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1583741784469" />
     <state x="616" y="235" key="run.anything.popup" timestamp="1582873343319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="235" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582873343319" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583292152732">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583743120171">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583292152732" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583743120171" />
   </component>
 </project>

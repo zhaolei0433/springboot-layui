@@ -27,8 +27,8 @@ public class ResponseConstants {
 	public static final String ERROR_CODE_00011_MSG = "参数不能为空！";
 	public static final Integer ERROR_CODE_00012 = 12;
 	public static final String ERROR_CODE_00012_MSG = "参数解析失败！";
-	public static final Integer ERROR_CODE_00401 = 401;
-	public static final String ERROR_CODE_00401_MSG = "未授权";
+	public static final Integer ERROR_CODE_00403 = 403;
+	public static final String ERROR_CODE_00403_MSG = "用户无权访问";
 	public static final Integer ERROR_CODE_00404 = 404;
 	public static final String ERROR_CODE_00404_MSG = "服务器不能处理该请求！";
 	public static final Integer ERROR_CODE_00500 = 500;

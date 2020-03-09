@@ -1,9 +1,10 @@
-package com.example.security;
+package com.example.security.myHandler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +17,10 @@ import java.io.IOException;
  * Modified By:
  * Description: 未登陆处理
  */
-public class UnAuthenticationEntryPoint implements AuthenticationEntryPoint {
+@Component
+public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UnAuthenticationEntryPoint.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MyAuthenticationEntryPoint.class);
 
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {

@@ -1,10 +1,9 @@
 package com.example.config;
 
-import com.example.security.myHandler.MyAuthenticationFailureHandler;
-import com.example.security.myHandler.MyAuthenticationSuccessHandler;
 import com.example.security.MyFilterSecurityInterceptor;
-import com.example.security.MyUsernamePasswordAuthenticationFilter;
-import com.example.security.UnAuthenticationEntryPoint;
+import com.example.security.myHandler.MyAccessDeniedHandler;
+import com.example.security.myHandler.MyAuthenticationEntryPoint;
+import com.example.security.myHandler.MyAuthenticationFailureHandler;
 import com.example.security.userDetails.MyUserDetailService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -18,11 +17,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
-import org.springframework.security.web.authentication.*;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.annotation.Resource;
 
@@ -41,6 +37,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
     private MyFilterSecurityInterceptor myFilterSecurityInterceptor;
+
+    @Resource
+    private MyAccessDeniedHandler myAccessDeniedHandler;
+
+    @Resource
+    private MyAuthenticationEntryPoint myAuthenticationEntryPoint;
+
+    @Resource
+    private MyAuthenticationFailureHandler myAuthenticationFailureHandler;
 
     @Value("${auth.skip.antMatchers}")
     private String[] auth_skip_antMatchers;
@@ -73,25 +78,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().frameOptions().disable();
         http.addFilterAt(myFilterSecurityInterceptor, FilterSecurityInterceptor.class);
-        // 不需要权限访问的路径
         http.authorizeRequests()
-                .antMatchers(auth_skip_antMatchers)
-                .permitAll()
+                // 设置不需要授权的请求
+                .antMatchers(auth_skip_antMatchers).permitAll()
                 // 其他地址的访问均需验证权限（需要登录）
-                .anyRequest()
-                .authenticated()
-                .and()
-                .addFilterAt(usernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-                .exceptionHandling()
-                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
-                // 指定登录页面的请求路径
-                .and().formLogin().loginPage("/login").permitAll()
-                .and()
-                .logout().logoutSuccessUrl("/login").permitAll()
-                .invalidateHttpSession(true);
+                .anyRequest().authenticated()
+                // 登陆配置
+                .and().formLogin()
+                    .loginPage("/login").defaultSuccessUrl("/index") //设置登陆页面，并设置成功响应
+                    .failureHandler(myAuthenticationFailureHandler).permitAll() //并设置失败响应为json格式
+                // 登出配置
+                .and().logout()
+                    .logoutSuccessUrl("/login").permitAll()
+                // Session配置
+                .and().sessionManagement()
+                    .invalidSessionUrl("/login") // 设置Session失效跳转页
+                    .maximumSessions(1); // 设置最大Session数为1
+
+        http.exceptionHandling().accessDeniedHandler(myAccessDeniedHandler);
+        http.httpBasic().authenticationEntryPoint(myAuthenticationEntryPoint);
         // 关闭csrf
         http.csrf().disable();
-
     }
 
 
@@ -105,42 +112,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private DefaultWebInvocationPrivilegeEvaluator customWebInvocationPrivilegeEvaluator() {
         return new DefaultWebInvocationPrivilegeEvaluator(myFilterSecurityInterceptor);
-    }
-
-    private UsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter() throws Exception {
-        MyUsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter = new MyUsernamePasswordAuthenticationFilter();
-        usernamePasswordAuthenticationFilter.setPostOnly(true);
-        usernamePasswordAuthenticationFilter.setAuthenticationManager(this.authenticationManager());
-        usernamePasswordAuthenticationFilter.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/user_login", "POST"));
-        usernamePasswordAuthenticationFilter.setAuthenticationFailureHandler(myAuthenticationFailureHandler());
-        usernamePasswordAuthenticationFilter.setAuthenticationSuccessHandler(myAuthenticationSuccessHandler());
-        return usernamePasswordAuthenticationFilter;
-    }
-
-    /**
-     * 登陆失败处理
-     * @return
-     */
-    @Bean
-    public AuthenticationFailureHandler myAuthenticationFailureHandler() {
-        return new MyAuthenticationFailureHandler();
-    }
-
-    /**
-     * 登录成功处理
-     * @return
-     */
-    @Bean
-    public AuthenticationSuccessHandler myAuthenticationSuccessHandler() {
-        return new MyAuthenticationSuccessHandler();
-    }
-
-    /**
-     * 注册 登录认证 bean
-     *
-     */
-    @Bean
-    public AuthenticationEntryPoint myAuthenticationEntryPoint() {
-        return new UnAuthenticationEntryPoint();
     }
 }

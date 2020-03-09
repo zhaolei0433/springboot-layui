@@ -21,7 +21,7 @@ import java.util.*;
  * @author zhaolei
  * Create: 2019/11/20 14:08
  * Modified By:
- * Description: 调用安全策略的元数据源。
+ * Description: 调用安全策略的元数据源。作用：储存请求与权限的对应关系。
  *              提取数据库中的所有用户权限形成权限列表，在通过每个权限去数据库中提取每个权限的资源列表，
  *              并将资源url作为key，权限列表作为value存储在一个map中
  */
@@ -88,7 +88,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
         return roleList;*/
 
         //返回为null表示这个url不需要任何角色就能访问
-        return null;
+        return roleList;
     }
 
     @Override
@@ -119,8 +119,6 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
      */
     @PostConstruct
     private void loadResourceDefine() throws Exception {
-        if (sysUserService == null)
-            return;
         List<PermissionInfo> permissionInfoList = sysUserService.queryAllData();
         LOGGER.info("**************permissionInfoList.size:{}", permissionInfoList.size());
         resourceMap = new HashMap<String, Collection<ConfigAttribute>>();
@@ -136,7 +134,7 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
             for (String item : urlArray) {
                 Collection<ConfigAttribute> atts = resourceMap.get(item);
                 if (atts == null)
-                    atts = new ArrayList<ConfigAttribute>();
+                    atts = new HashSet<>();
                 for (String roleName : roleNames  ) {
                     ConfigAttribute ca = new SecurityConfig(roleName);
                     atts.add(ca);
