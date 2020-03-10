@@ -1,4 +1,4 @@
-package com.example.security.userDetails;
+package com.example.security.userdetails;
 
 import com.example.entity.SysUserInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -84,31 +84,16 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public String toString() {
-        return "MyUserDetails{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", authorities=" + authorities +
-                ", enabled=" + enabled +
-                ", lastPasswordResetDate=" + lastPasswordResetDate +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MyUserDetails that = (MyUserDetails) o;
-        return enabled == that.enabled &&
-                Objects.equals(userId, that.userId) &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(password, that.password) &&
-                Objects.equals(authorities, that.authorities) &&
-                Objects.equals(lastPasswordResetDate, that.lastPasswordResetDate);
+        return this.username;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, username, password, authorities, enabled, lastPasswordResetDate);
+        return username.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.toString().equals(obj.toString());
     }
 }

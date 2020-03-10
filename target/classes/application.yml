@@ -2,14 +2,14 @@ server:
   port: 8080
   servlet:
     session:
-      timeout: 3600s
+      timeout: 10s
 spring:
   application:
     name: boot-layui-demo
   datasource:
-    url: jdbc:mysql://139.159.177.48:3306/my_default_system?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://localhost:3306/my_default_system?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password: zhaolei
+    password: root
     hikari:
       max-lifetime: 1800000
       connection-timeout: 30000
@@ -30,7 +30,6 @@ spring:
     servlet:
       content-type: text/html
     cache: false
-
 auth:
   skip:
     antMatchers:
@@ -39,3 +38,4 @@ auth:
       /webjars/**,
       /v2/**,
       /swagger-ui.html/**
+

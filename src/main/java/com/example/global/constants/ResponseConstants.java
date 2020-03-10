@@ -29,8 +29,10 @@ public class ResponseConstants {
 	public static final String ERROR_CODE_0000401_MSG = "用户名或密码错误！";
 	public static final Integer ERROR_CODE_00004011 = 4011;
 	public static final String ERROR_CODE_00004011_MSG = "账号过期或被锁定！";
-	public static final Integer ERROR_CODE_00004012 = 4012;
+	public static final Integer ERROR_CODE_00004012 = 4013;
 	public static final String ERROR_CODE_00004012_MSG = "账号不可用！";
+	public static final Integer ERROR_CODE_00004013 = 4013;
+	public static final String ERROR_CODE_00004013_MSG = "当前用户已登陆！";
 	public static final Integer ERROR_CODE_00403 = 403;
 	public static final String ERROR_CODE_00403_MSG = "用户无权访问";
 	public static final Integer ERROR_CODE_00404 = 404;

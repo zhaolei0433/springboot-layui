@@ -1,4 +1,4 @@
-package com.example.security.userDetails;
+package com.example.security.userdetails;
 
 import com.example.entity.SysUserInfo;
 import org.springframework.security.core.GrantedAuthority;

@@ -53,7 +53,6 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
                 }
             }
         }
-        LOGGER.info("****无权限:{}", object);
         throw new AccessDeniedException("no right!");
     }
 

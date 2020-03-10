@@ -1,7 +1,7 @@
-package com.example.security.myHandler;
+package com.example.security.myhandler;
 
 import com.example.global.constants.SystemDefines;
-import com.example.security.userDetails.MyUserDetails;
+import com.example.security.userdetails.MyUserDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -40,8 +40,8 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
          * 运行在服务端	                            运行在客户端
          * 浏览器url地址不变化                         浏览器url地址变化
          */
-        RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("/index");
-        dispatcher.forward(httpServletRequest, httpServletResponse);
+        /*RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("/index");
+        dispatcher.forward(httpServletRequest, httpServletResponse);*/
         //根据业务需求哪种方法
         //httpServletResponse.sendRedirect("/index");
         LOGGER.info(userDetails.getUsername() + "： 登陆成功！");
