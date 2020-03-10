@@ -44,8 +44,8 @@ public class SysUserLoginController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/session/invalid", method = RequestMethod.GET)
-    public String sessionInvalid(HttpServletResponse response) throws Exception {
+    @RequestMapping(value = "/sessionInvalid", method = RequestMethod.GET)
+    public String sessionInvalid() throws Exception {
         return "login1";
     }
 

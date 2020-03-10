@@ -25,8 +25,7 @@ public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException exception) throws IOException, ServletException {
-        RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("/login");
-        dispatcher.forward(httpServletRequest, httpServletResponse);
+        httpServletResponse.sendRedirect("/login");
         LOGGER.error("未登陆，"+exception.getMessage());
     }
 }

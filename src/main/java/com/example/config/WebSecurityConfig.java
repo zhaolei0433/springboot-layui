@@ -53,9 +53,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
 
-    @Resource
-    private MyInvalidSessionStrategy myInvalidSessionStrategy;
-
     @Autowired
     private SessionRegistry sessionRegistry;
 
@@ -114,8 +111,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
              .and().logout()
                 .logoutSuccessUrl("/login").permitAll()
              .and().sessionManagement()
-                //.invalidSessionUrl("/login"); //session失效处理
-                    .invalidSessionStrategy(new SimpleRedirectInvalidSessionStrategy("/login"));
+                .invalidSessionUrl("/sessionInvalid"); //session失效处理
                     /*.maximumSessions(1)
                         .maxSessionsPreventsLogin(true) // Session达到最大有效数的时候，不再允许相同的账户登录。
                         .sessionRegistry(sessionRegistry); // 添加 session 注册*/
