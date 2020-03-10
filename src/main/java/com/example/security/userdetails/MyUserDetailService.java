@@ -101,6 +101,7 @@ public class MyUserDetailService implements UserDetailsService {
         }
         if(null != sessionsInfo && sessionsInfo.size() > 0) {
             for (SessionInformation sessionInformation : sessionsInfo) {
+                LOGGER.info("设置当前session失效"+sessionInformation.getSessionId());
                 //当前session失效
                 sessionInformation.expireNow();
                 sessionRegistry.removeSessionInformation(sessionInformation.getSessionId());

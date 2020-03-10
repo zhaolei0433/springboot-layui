@@ -59,7 +59,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${auth.skip.antMatchers}")
     private String[] auth_skip_antMatchers;
 
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -71,7 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * 自己new 一个对象吧，所以我就new SessionRegistry(),并用我自己的SessionRegistry管理session 咯
      */
     @Bean
-    public SessionRegistry getSessionRegistry(){
+    public SessionRegistry getSessionRegistry() {
         return new SessionRegistryImpl();
     }
 
@@ -92,6 +91,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 不删除凭据，以便记住用户
         auth.eraseCredentials(false);
     }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().frameOptions().disable();
@@ -101,20 +101,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(auth_skip_antMatchers).permitAll()
                 // 其他地址的访问均需验证权限（需要登录）
                 .anyRequest().authenticated()
-             .and().exceptionHandling()
+                .and().exceptionHandling()
                 .authenticationEntryPoint(myAuthenticationEntryPoint) // 未登录处理
                 .accessDeniedHandler(myAccessDeniedHandler) // 无权限处理
-             .and().formLogin()
+                .and().formLogin()
                 .loginPage("/login") // 设置登陆页面
                 .successHandler(myAuthenticationSuccessHandler) // 登陆成功处理
-                .failureHandler(myAuthenticationFailureHandler).permitAll() // 登录失败处理
-             .and().logout()
-                .logoutSuccessUrl("/login").permitAll()
-             .and().sessionManagement()
-                .invalidSessionUrl("/sessionInvalid"); //session失效处理
-                    /*.maximumSessions(1)
-                        .maxSessionsPreventsLogin(true) // Session达到最大有效数的时候，不再允许相同的账户登录。
-                        .sessionRegistry(sessionRegistry); // 添加 session 注册*/
+                .failureHandler(myAuthenticationFailureHandler) // 登录失败处理
+                .and().logout()
+                .logoutSuccessUrl("/login")
+                .and().sessionManagement()
+                .invalidSessionUrl("/sessionInvalid")//session失效处理
+                .maximumSessions(1)
+                .maxSessionsPreventsLogin(true) // Session达到最大有效数的时候，不再允许相同的账户登录。
+                .sessionRegistry(sessionRegistry); // 添加 session 注册*/
         // 关闭csrf
         http.csrf().disable();
     }
@@ -126,7 +126,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 的实例，使用自定义的权限拦截器，否则sec:authorize不起作用
         web.privilegeEvaluator(customWebInvocationPrivilegeEvaluator());
         // 设置拦截忽略文件夹，可以对静态资源放行
-        web.ignoring().and().ignoring().antMatchers("/css/**", "/js/**","/image/**");
+        web.ignoring().and().ignoring().antMatchers("/css/**", "/js/**", "/image/**");
     }
 
     private DefaultWebInvocationPrivilegeEvaluator customWebInvocationPrivilegeEvaluator() {
