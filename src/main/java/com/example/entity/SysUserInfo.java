@@ -46,6 +46,9 @@ public class SysUserInfo implements Serializable {
     @Column(name = "enabled", nullable = false, columnDefinition = "tinyint(1) COMMENT '是否开启'")
     private boolean enabled;
 
+    @Column(name = "expire_date", nullable = false, columnDefinition = "varchar(100) COMMENT '过期时间'")
+    private String expireDate;
+
     @JsonBackReference
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
@@ -127,6 +130,14 @@ public class SysUserInfo implements Serializable {
         this.enabled = enabled;
     }
 
+    public String getExpireDate() {
+        return expireDate;
+    }
+
+    public void setExpireDate(String expireDate) {
+        this.expireDate = expireDate;
+    }
+
     @Override
     public String toString() {
         return "SysUserInfo{" +
@@ -138,6 +149,7 @@ public class SysUserInfo implements Serializable {
                 ", createTime='" + createTime + '\'' +
                 ", userType='" + userType + '\'' +
                 ", enabled='" + enabled + '\'' +
+                ", expireDate='" + expireDate + '\'' +
                 '}';
     }
 }

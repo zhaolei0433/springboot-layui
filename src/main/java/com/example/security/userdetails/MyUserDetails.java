@@ -1,6 +1,7 @@
 package com.example.security.userdetails;
 
 import com.example.entity.SysUserInfo;
+import com.example.global.constants.SystemDefines;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -23,7 +25,7 @@ public class MyUserDetails implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
     private boolean enabled; //是否开启
-    private Instant lastPasswordResetDate;
+    private boolean isAccountNonExpired; //是否过期
 
     MyUserDetails(SysUserInfo userInfo, Collection<? extends GrantedAuthority> authorities) {
         this.userId = userInfo.getId();
@@ -31,7 +33,7 @@ public class MyUserDetails implements UserDetails {
         this.password = userInfo.getPassword();
         this.authorities = authorities;
         this.enabled = userInfo.isEnabled();
-        this.lastPasswordResetDate = LocalDateTime.now().minusDays(1L).toInstant(OffsetDateTime.now().getOffset());
+        this.isAccountNonExpired = (LocalDateTime.parse(userInfo.getExpireDate(), DateTimeFormatter.ofPattern(SystemDefines.SIMPLE_DATE_FORMAT)).isAfter(LocalDateTime.now()));
     }
 
     @Override
@@ -53,7 +55,7 @@ public class MyUserDetails implements UserDetails {
     @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return isAccountNonExpired;
     }
 
     @JsonIgnore
@@ -76,10 +78,6 @@ public class MyUserDetails implements UserDetails {
 
     public Integer getUserId() {
         return userId;
-    }
-
-    public Instant getLastPasswordResetDate() {
-        return lastPasswordResetDate;
     }
 
     @Override

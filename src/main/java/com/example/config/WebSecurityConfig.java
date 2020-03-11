@@ -70,7 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 用户登录以后security 会把生成的session 放到 SessionRegistry 里面。那么我门想让session 失效只用找到对应的session，然后将它从SessionRegistry 中剔除出去就好了。
-     * 但是查看了源码发现SessionRegistry 是 final 。。。。。这个可怎么办呢？
+     * 但是查看了源码发现SessionRegistry 是 final  这个可怎么办呢？
      * 自己new 一个对象吧，所以我就new SessionRegistry(),并用我自己的SessionRegistry管理session 咯
      */
     @Bean

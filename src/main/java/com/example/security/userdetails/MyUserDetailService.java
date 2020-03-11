@@ -75,7 +75,6 @@ public class MyUserDetailService implements UserDetailsService {
                 authorities = sysUser.getRoleInfos().stream().map(roleInfo -> new SimpleGrantedAuthority(roleInfo.getName())).collect(Collectors.toList());
         }
         authorities.forEach(a -> LOGGER.info("****aName: {}", a.getAuthority()));
-        System.out.println(sysUser);
         return MyUserDetailsFactory.create(sysUser, authorities);
     }
 
