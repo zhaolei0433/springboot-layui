@@ -43,11 +43,8 @@ public class SysUserInfo implements Serializable {
     @Column(name = "user_type", nullable = false, columnDefinition = "varchar(100) COMMENT '用户类型'")
     private String userType;
 
-    @Column(name = "enabled", nullable = false, columnDefinition = "varchar(100) COMMENT '是否开启'")
+    @Column(name = "enabled", nullable = false, columnDefinition = "tinyint(1) COMMENT '是否开启'")
     private boolean enabled;
-
-    @Column(name = "expire_date", nullable = false, columnDefinition = "varchar(100) COMMENT '是否开启'")
-    private boolean expireDdate;
 
     @JsonBackReference
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
