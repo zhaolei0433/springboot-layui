@@ -14,8 +14,19 @@ import java.util.List;
  */
 public interface ISysUserService {
 
+    /**
+     * 添加用户
+     * @param req
+     * @return
+     * @throws Exception
+     */
     SysUserInfo addSysUser(AddSysUserReq req) throws Exception;
 
+    /**
+     * 获取所有用户信息
+     * @return
+     * @throws Exception
+     */
     List<SysUserInfo> getSysUser() throws Exception;
 
     /**

@@ -22,7 +22,7 @@ public class MyUserDetails implements UserDetails {
     private String username;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
-    private boolean enabled;
+    private boolean enabled; //是否开启
     private Instant lastPasswordResetDate;
 
     MyUserDetails(SysUserInfo userInfo, Collection<? extends GrantedAuthority> authorities) {
@@ -30,7 +30,7 @@ public class MyUserDetails implements UserDetails {
         this.username = userInfo.getUserName();
         this.password = userInfo.getPassword();
         this.authorities = authorities;
-        this.enabled = true;
+        this.enabled = userInfo.isEnabled();
         this.lastPasswordResetDate = LocalDateTime.now().minusDays(1L).toInstant(OffsetDateTime.now().getOffset());
     }
 
@@ -71,7 +71,7 @@ public class MyUserDetails implements UserDetails {
     @JsonIgnore
     @Override
     public boolean isEnabled() {
-        return true;
+        return enabled;
     }
 
     public Integer getUserId() {

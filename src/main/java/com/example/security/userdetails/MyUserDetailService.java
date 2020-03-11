@@ -75,6 +75,7 @@ public class MyUserDetailService implements UserDetailsService {
                 authorities = sysUser.getRoleInfos().stream().map(roleInfo -> new SimpleGrantedAuthority(roleInfo.getName())).collect(Collectors.toList());
         }
         authorities.forEach(a -> LOGGER.info("****aName: {}", a.getAuthority()));
+        System.out.println(sysUser);
         return MyUserDetailsFactory.create(sysUser, authorities);
     }
 
@@ -93,7 +94,7 @@ public class MyUserDetailService implements UserDetailsService {
                 }
             }
         }else if (null != request ) {
-            SecurityContext sc = (SecurityContext) request.getSession().getAttribute("SPRING_SECURITY_CONTEXT");
+            SecurityContext sc = (SecurityContext) request.getSession().getAttribute(SystemDefines.SESSION_USER_NAME);
             if (null != sc.getAuthentication().getPrincipal()) {
                 sessionsInfo = sessionRegistry.getAllSessions(sc.getAuthentication().getPrincipal(), false);
                 sc.setAuthentication(null);
@@ -101,7 +102,8 @@ public class MyUserDetailService implements UserDetailsService {
         }
         if(null != sessionsInfo && sessionsInfo.size() > 0) {
             for (SessionInformation sessionInformation : sessionsInfo) {
-                LOGGER.info("设置当前session失效"+sessionInformation.getSessionId());
+                assert user != null;
+                LOGGER.info("设置当前"+user.getUsername()+"在security注册器（sessionRegistry）中session失效:"+sessionInformation.getSessionId());
                 //当前session失效
                 sessionInformation.expireNow();
                 sessionRegistry.removeSessionInformation(sessionInformation.getSessionId());

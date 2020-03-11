@@ -27,6 +27,13 @@ public class SysUserLoginController {
         this.myUserDetailService = myUserDetailService;
     }
 
+    /**
+     * 首页
+     * @param model
+     * @param httpServletRequest
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("/index")
     public String index(Model model, HttpServletRequest httpServletRequest) throws Exception {
         model.addAttribute("name","layui后台系统");
@@ -34,18 +41,13 @@ public class SysUserLoginController {
         return "index";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage() throws Exception {
-        return "login1";
-    }
-
     /**
-     * session失效策略
+     * 登录页面
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/sessionInvalid", method = RequestMethod.GET)
-    public String sessionInvalid() throws Exception {
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage() throws Exception {
         return "login1";
     }
 

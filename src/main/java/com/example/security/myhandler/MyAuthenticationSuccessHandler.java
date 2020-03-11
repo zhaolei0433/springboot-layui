@@ -1,7 +1,10 @@
 package com.example.security.myhandler;
 
+import com.example.global.constants.ResponseConstants;
 import com.example.global.constants.SystemDefines;
+import com.example.model.Result;
 import com.example.security.userdetails.MyUserDetails;
+import com.example.utils.GsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -9,7 +12,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,7 +45,8 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
         /*RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("/index");
         dispatcher.forward(httpServletRequest, httpServletResponse);*/
         //根据业务需求哪种方法
-        //httpServletResponse.sendRedirect("/index");
-        LOGGER.info(userDetails.getUsername() + "： 登陆成功！");
+        httpServletResponse.setContentType("application/json;charset=UTF-8");
+        httpServletResponse.getWriter().write(GsonUtil.GsonString(new Result<>("/index")));
+        LOGGER.info(userDetails.getUsername() + "： 登陆成功！session:" + httpServletRequest.getSession().getId());
     }
 }

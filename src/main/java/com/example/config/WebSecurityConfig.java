@@ -20,8 +20,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
-import org.springframework.security.web.session.HttpSessionEventPublisher;
-import org.springframework.security.web.session.SimpleRedirectInvalidSessionStrategy;
 
 import javax.annotation.Resource;
 
@@ -52,6 +50,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
     private MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
+
+    @Resource
+    private MySessionInformationExpiredStrategy mySessionInformationExpiredStrategy;
+
+    @Resource
+    private MyLogOutSuccessHandler myLogOutSuccessHandler;
 
     @Autowired
     private SessionRegistry sessionRegistry;
@@ -109,11 +113,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(myAuthenticationSuccessHandler) // 登陆成功处理
                 .failureHandler(myAuthenticationFailureHandler) // 登录失败处理
                 .and().logout()
-                .logoutSuccessUrl("/login")
+                .logoutUrl("/logout") // 设置退出登录url
+                .logoutSuccessHandler(myLogOutSuccessHandler) // 退出登录成功处理
                 .and().sessionManagement()
-                .invalidSessionUrl("/sessionInvalid")//session失效处理
+                .invalidSessionUrl("/login")// session失效处理
                 .maximumSessions(1)
-                .maxSessionsPreventsLogin(true) // Session达到最大有效数的时候，不再允许相同的账户登录。
+                //.expiredUrl("/login") // 已过期重定向的url
+                .expiredSessionStrategy(mySessionInformationExpiredStrategy) // 已过期策略
+                .maxSessionsPreventsLogin(false) // Session达到最大有效数的时候，不再允许相同的账户登录。
                 .sessionRegistry(sessionRegistry); // 添加 session 注册*/
         // 关闭csrf
         http.csrf().disable();

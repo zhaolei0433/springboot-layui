@@ -185,7 +185,7 @@
                     password: $("#password").val()
                 },
                 success:function (data) {
-                    window.location.href = '/index';
+                    window.location.href = data.data;
                 },
                 error:function (data) {
                     $(".warning").css("color", "#f00");

@@ -39,8 +39,9 @@ public class MyLogOutSuccessHandler implements LogoutSuccessHandler {
     @Override
     public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
-        myUserDetailService.expireSession(null,userDetails,sessionRegistry);
+        //其实在退出时，servlet中session会被注销掉，注销时会触发自定义的session注销监听实现sessionRegistry中的session失效，这里也可以实现，不过这里再去实现一遍意义不大
+        //myUserDetailService.expireSession(null,userDetails,sessionRegistry);
         httpServletResponse.sendRedirect("/login");
-        LOGGER.error(userDetails.getUsername() + "：推出登陆");
+        LOGGER.error(userDetails.getUsername() + "：退出登陆");
     }
 }

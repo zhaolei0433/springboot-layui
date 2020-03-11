@@ -43,6 +43,12 @@ public class SysUserInfo implements Serializable {
     @Column(name = "user_type", nullable = false, columnDefinition = "varchar(100) COMMENT '用户类型'")
     private String userType;
 
+    @Column(name = "enabled", nullable = false, columnDefinition = "varchar(100) COMMENT '是否开启'")
+    private boolean enabled;
+
+    @Column(name = "expire_date", nullable = false, columnDefinition = "varchar(100) COMMENT '是否开启'")
+    private boolean expireDdate;
+
     @JsonBackReference
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
@@ -116,6 +122,14 @@ public class SysUserInfo implements Serializable {
         this.roleInfos = roleInfos;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public String toString() {
         return "SysUserInfo{" +
@@ -126,6 +140,7 @@ public class SysUserInfo implements Serializable {
                 ", mailBox='" + mailBox + '\'' +
                 ", createTime='" + createTime + '\'' +
                 ", userType='" + userType + '\'' +
+                ", enabled='" + enabled + '\'' +
                 '}';
     }
 }

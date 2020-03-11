@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 @SpringBootApplication
-@ServletComponentScan
 public class SpringbootLayuiApplication {
 
     public static void main(String[] args) {

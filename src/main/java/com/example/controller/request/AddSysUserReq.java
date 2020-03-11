@@ -14,4 +14,5 @@ public class AddSysUserReq {
     private String password;
     private String phone;
     private String mailBox;
+    private boolean enabled;
 }
